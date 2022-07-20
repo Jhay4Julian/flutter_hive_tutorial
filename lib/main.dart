@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hive_tutorial/contact.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
   final appDocumentDir = await path_provider.getApplicationDocumentsDirectory();
   Hive.init(appDocumentDir.path);
+  Hive.registerAdapter(ContactAdapter());
   runApp(const MyApp());
 }
 
